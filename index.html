@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cofi | Brunch & Café</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fffaf0, #fdf6e3);
+    }
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="text-gray-900 font-sans">
   <!-- Encabezado con logo -->
   <header class="bg-black text-white p-6 shadow-md flex flex-col items-center">
-    <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4">
-    <p class="text-lg">Brunch & Café</p>
+    <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4 rounded-xl shadow">
+    <p class="text-lg font-light tracking-wider">Brunch & Café</p>
   </header>
 
   <!-- Menú estilizado -->
-  <section class="p-8 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 text-center">Menú</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-yellow-100 p-4 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Espresso</h3>
-        <ul class="space-y-1">
+  <section class="p-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-serif font-semibold mb-8 text-center">Menú</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
+        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Espresso</h3>
+        <ul class="space-y-2">
           <li class="flex justify-between"><span>Americano</span><span>$45</span></li>
           <li class="flex justify-between"><span>Espresso</span><span>$45</span></li>
           <li class="flex justify-between"><span>Cappuccino</span><span>$55</span></li>
@@ -29,9 +38,9 @@
         </ul>
       </div>
 
-      <div class="bg-yellow-100 p-4 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Cold Brew y Filtros</h3>
-        <ul class="space-y-1">
+      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
+        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Cold Brew y Filtros</h3>
+        <ul class="space-y-2">
           <li class="flex justify-between"><span>Filtrados</span><span>$70</span></li>
           <li class="flex justify-between"><span>Cold Brew Tonic</span><span>$65</span></li>
           <li class="flex justify-between"><span>Cold Brew Piña</span><span>$75</span></li>
@@ -40,9 +49,9 @@
         </ul>
       </div>
 
-      <div class="bg-yellow-100 p-4 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Otras bebidas</h3>
-        <ul class="space-y-1">
+      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
+        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Otras bebidas</h3>
+        <ul class="space-y-2">
           <li class="flex justify-between"><span>Matcha</span><span>$75</span></li>
           <li class="flex justify-between"><span>Pink Chai</span><span>$80</span></li>
           <li class="flex justify-between"><span>Chocolate Oaxaqueño</span><span>$75</span></li>
@@ -51,9 +60,9 @@
         </ul>
       </div>
 
-      <div class="bg-yellow-100 p-4 rounded-xl shadow">
-        <h3 class="text-xl font-bold mb-2">Desayunos</h3>
-        <ul class="space-y-1">
+      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
+        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Desayunos</h3>
+        <ul class="space-y-2">
           <li class="flex justify-between"><span>Omelette Cochinita</span><span>$135</span></li>
           <li class="flex justify-between"><span>Chilaquiles</span><span>$130</span></li>
           <li class="flex justify-between"><span>Pan francés</span><span>$110</span></li>
@@ -65,8 +74,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white p-6 mt-8 text-center">
-    <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofi.mx_</p>
+  <footer class="bg-black text-white p-6 mt-12 text-center text-sm tracking-wide">
+    <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofibrunchcafe</p>
   </footer>
 </body>
 </html>
