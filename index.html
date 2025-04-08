@@ -3,52 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Café Bonito</title>
+  <title>Cofi | Brunch & Café</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-beige-100 text-gray-800 font-sans">
-  <!-- Encabezado -->
-  <header class="bg-yellow-200 p-6 shadow-md">
-    <h1 class="text-4xl font-bold text-center">Café Bonito</h1>
-    <p class="text-center text-lg mt-2">Donde el café tiene abrazos</p>
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Encabezado con logo -->
+  <header class="bg-black text-white p-6 shadow-md flex flex-col items-center">
+    <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4">
+    <p class="text-lg">Brunch & Café</p>
   </header>
 
-  <!-- Sobre Nosotros -->
-  <section class="p-8 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-4">Sobre Nosotros</h2>
-    <p class="text-gray-700">Somos una cafetería local con mucho amor por el café de especialidad y los momentos tranquilos. Ven a visitarnos y siéntete como en casa (pero con mejor espresso).</p>
-  </section>
+  <!-- Menú estilizado -->
+  <section class="p-8 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Menú</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-yellow-100 p-4 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Espresso</h3>
+        <ul class="space-y-1">
+          <li class="flex justify-between"><span>Americano</span><span>$45</span></li>
+          <li class="flex justify-between"><span>Espresso</span><span>$45</span></li>
+          <li class="flex justify-between"><span>Cappuccino</span><span>$55</span></li>
+          <li class="flex justify-between"><span>Flat white</span><span>$55</span></li>
+          <li class="flex justify-between"><span>Latte</span><span>$60</span></li>
+          <li class="flex justify-between"><span>Cortado</span><span>$50</span></li>
+        </ul>
+      </div>
 
-  <!-- Menú -->
-  <section class="bg-white p-8 max-w-4xl mx-auto mt-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Nuestro Menú</h2>
-    <ul class="space-y-2">
-      <li class="flex justify-between border-b pb-2">
-        <span>Espresso</span><span>$35</span>
-      </li>
-      <li class="flex justify-between border-b pb-2">
-        <span>Latte</span><span>$45</span>
-      </li>
-      <li class="flex justify-between border-b pb-2">
-        <span>Capuccino</span><span>$45</span>
-      </li>
-      <li class="flex justify-between border-b pb-2">
-        <span>Pan de plátano</span><span>$30</span>
-      </li>
-    </ul>
-  </section>
+      <div class="bg-yellow-100 p-4 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Cold Brew y Filtros</h3>
+        <ul class="space-y-1">
+          <li class="flex justify-between"><span>Filtrados</span><span>$70</span></li>
+          <li class="flex justify-between"><span>Cold Brew Tonic</span><span>$65</span></li>
+          <li class="flex justify-between"><span>Cold Brew Piña</span><span>$75</span></li>
+          <li class="flex justify-between"><span>Cold Brew Mojito</span><span>$75</span></li>
+          <li class="flex justify-between"><span>Coco Cold Brew</span><span>$85</span></li>
+        </ul>
+      </div>
 
-  <!-- Horarios y contacto -->
-  <section class="p-8 max-w-4xl mx-auto mt-6">
-    <h2 class="text-2xl font-semibold mb-4">Visítanos</h2>
-    <p><strong>Dirección:</strong> Calle Ficticia 123, Colonia Inventada</p>
-    <p><strong>Horario:</strong> Lunes a Sábado, 8am - 6pm</p>
-    <p><strong>Teléfono:</strong> 55-1234-5678</p>
+      <div class="bg-yellow-100 p-4 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Otras bebidas</h3>
+        <ul class="space-y-1">
+          <li class="flex justify-between"><span>Matcha</span><span>$75</span></li>
+          <li class="flex justify-between"><span>Pink Chai</span><span>$80</span></li>
+          <li class="flex justify-between"><span>Chocolate Oaxaqueño</span><span>$75</span></li>
+          <li class="flex justify-between"><span>Tisana</span><span>$75</span></li>
+          <li class="flex justify-between"><span>Honey Latte</span><span>$75</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-yellow-100 p-4 rounded-xl shadow">
+        <h3 class="text-xl font-bold mb-2">Desayunos</h3>
+        <ul class="space-y-1">
+          <li class="flex justify-between"><span>Omelette Cochinita</span><span>$135</span></li>
+          <li class="flex justify-between"><span>Chilaquiles</span><span>$130</span></li>
+          <li class="flex justify-between"><span>Pan francés</span><span>$110</span></li>
+          <li class="flex justify-between"><span>Avotoast</span><span>$110</span></li>
+          <li class="flex justify-between"><span>Bowl de frutas</span><span>$100</span></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-yellow-200 p-6 mt-8 text-center">
-    <p>&copy; 2025 Café Bonito. Síguenos en Instagram: @cafebonito</p>
+  <footer class="bg-black text-white p-6 mt-8 text-center">
+    <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofibrunchcafe</p>
   </footer>
 </body>
 </html>
