@@ -18,18 +18,34 @@
       color: black;
       transform: scale(1.05);
     }
+    .gallery-img {
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      animation: float 4s ease-in-out infinite;
+    }
+    .gallery-img:hover {
+      transform: scale(1.07) rotate(1deg);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
   </style>
 </head>
 <body class="text-gray-900 font-sans">
   <!-- Encabezado con logo -->
   <header class="bg-black text-white p-6 shadow-md flex flex-col items-center">
     <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4 rounded-xl shadow">
-    <p class="text-lg font-light tracking-wider">Café de especialidad y más</p>
+    <p class="text-lg font-light tracking-wider">¿Bruncehamos?</p>
   </header>
 
   <!-- Botón de pedido -->
   <section class="text-center mt-10">
-    <a href="https://wa.me/522225542322" target="_blank" class="pedido-btn inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">Haz tu pedido</a>
+    <a href="https://wa.me/5215512345678" target="_blank" class="pedido-btn inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">Haz tu pedido</a>
     <p class="text-sm mt-2 text-gray-500">(Te llevamos directo a WhatsApp)</p>
   </section>
 
@@ -37,15 +53,16 @@
   <section class="p-8 max-w-6xl mx-auto mt-16">
     <h2 class="text-4xl font-serif font-semibold mb-8 text-center">Galería</h2>
     <div class="grid md:grid-cols-4 gap-6">
-      <img src="Foto1.jpeg" alt="Café 1" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto2.jpeg" alt="Café 2" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto3.jpeg" alt="Café 3" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto4.jpeg" alt="Café 4" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto5.jpeg" alt="Café 5" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto6.jpeg" alt="Café 6" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto7.jpeg" alt="Café 7" class="rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto8.jpeg" alt="Café 8" class="rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto1.jpeg" alt="Café 1" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto2.jpeg" alt="Café 2" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto3.jpeg" alt="Café 3" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto4.jpeg" alt="Café 4" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto5.jpeg" alt="Café 5" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto6.jpeg" alt="Café 6" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto7.jpeg" alt="Café 7" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      <img src="Foto8.jpeg" alt="Café 8" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
     </div>
+    <p class="text-sm text-center text-gray-500 mt-4">(Sube tus imágenes al repositorio con estos nombres: Foto1.jpeg a Foto8.jpeg)</p>
   </section>
 
   <!-- Menú estilizado -->
