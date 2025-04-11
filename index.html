@@ -183,28 +183,4 @@
     </section>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white p-6 mt-12 text-center text-sm tracking-wide">
-    <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofi.mx_</p>
-  </footer>
-
-  <script>
-    const images = document.querySelectorAll('.gallery-img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  </script>
-</body>
-</html>
-
 
