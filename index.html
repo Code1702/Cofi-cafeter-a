@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cofi | Brunch & Café</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Work+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(to bottom, #fffaf0, #fdf6e3);
+      font-family: 'Work Sans', sans-serif;
+    }
+    h2, h3 {
+      font-family: 'Playfair Display', serif;
     }
     .card:hover {
       transform: scale(1.02);
@@ -21,6 +26,7 @@
     .gallery-img {
       transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
       animation: float 4s ease-in-out infinite;
+      cursor: pointer;
     }
     .gallery-img:hover {
       transform: scale(1.07) rotate(1deg);
@@ -34,89 +40,122 @@
         transform: translateY(-6px);
       }
     }
+    .attention-banner {
+      background: linear-gradient(to right, #facc15, #fef08a);
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-height: 80vh;
+      max-width: 90vw;
+      border-radius: 1rem;
+    }
   </style>
 </head>
-<body class="text-gray-900 font-sans">
-  <!-- Encabezado con logo -->
-  <header class="bg-black text-white p-6 shadow-md flex flex-col items-center">
-    <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4 rounded-xl shadow">
-    <p class="text-lg font-light tracking-wider">¿Bruncheamos?</p>
-  </header>
-
-  <!-- Botón de pedido -->
-  <section class="text-center mt-10">
-    <a href="https://wa.me/5215512345678" target="_blank" class="pedido-btn inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">Haz tu pedido</a>
-    <p class="text-sm mt-2 text-gray-500">(Te llevamos directo a WhatsApp)</p>
-  </section>
-
-  <!-- Galería de imágenes -->
-  <section class="p-8 max-w-6xl mx-auto mt-16">
-    <h2 class="text-4xl font-serif font-semibold mb-8 text-center">Galería</h2>
-    <div class="grid md:grid-cols-4 gap-6">
-      <img src="Foto1.jpeg" alt="Café 1" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto2.jpeg" alt="Café 2" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto3.jpeg" alt="Café 3" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto4.jpeg" alt="Café 4" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto5.jpeg" alt="Café 5" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto6.jpeg" alt="Café 6" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto7.jpeg" alt="Café 7" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
-      <img src="Foto8.jpeg" alt="Café 8" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+<body class="text-gray-900">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-90 shadow z-40 px-6 py-3 flex justify-between items-center">
+    <a href="#" class="font-bold text-xl">Cofi</a>
+    <div class="space-x-4 text-sm">
+      <a href="#galeria" class="hover:text-yellow-600">Galería</a>
+      <a href="#menu" class="hover:text-yellow-600">Menú</a>
+      <a href="https://wa.me/5215512345678" target="_blank" class="hover:text-yellow-600">Pedido</a>
     </div>
-  </section>
+  </nav>
 
-  <!-- Menú estilizado -->
-  <section class="p-8 max-w-6xl mx-auto">
-    <h2 class="text-4xl font-serif font-semibold mb-8 text-center">Menú</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
-        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Espresso</h3>
-        <ul class="space-y-2">
-          <li class="flex justify-between"><span>Americano</span><span>$45</span></li>
-          <li class="flex justify-between"><span>Espresso</span><span>$45</span></li>
-          <li class="flex justify-between"><span>Cappuccino</span><span>$55</span></li>
-          <li class="flex justify-between"><span>Flat white</span><span>$55</span></li>
-          <li class="flex justify-between"><span>Latte</span><span>$60</span></li>
-          <li class="flex justify-between"><span>Cortado</span><span>$50</span></li>
-        </ul>
-      </div>
-
-      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
-        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Cold Brew y Filtros</h3>
-        <ul class="space-y-2">
-          <li class="flex justify-between"><span>Filtrados</span><span>$70</span></li>
-          <li class="flex justify-between"><span>Cold Brew Tonic</span><span>$65</span></li>
-          <li class="flex justify-between"><span>Cold Brew Piña</span><span>$75</span></li>
-          <li class="flex justify-between"><span>Cold Brew Mojito</span><span>$75</span></li>
-          <li class="flex justify-between"><span>Coco Cold Brew</span><span>$85</span></li>
-        </ul>
-      </div>
-
-      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
-        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Otras bebidas</h3>
-        <ul class="space-y-2">
-          <li class="flex justify-between"><span>Matcha</span><span>$75</span></li>
-          <li class="flex justify-between"><span>Pink Chai</span><span>$80</span></li>
-          <li class="flex justify-between"><span>Chocolate Oaxaqueño</span><span>$75</span></li>
-          <li class="flex justify-between"><span>Tisana</span><span>$75</span></li>
-          <li class="flex justify-between"><span>Honey Latte</span><span>$75</span></li>
-        </ul>
-      </div>
-
-      <div class="bg-yellow-100 p-6 rounded-2xl shadow card">
-        <h3 class="text-2xl font-bold mb-3 border-b border-yellow-300 pb-1">Desayunos</h3>
-        <ul class="space-y-2">
-          <li class="flex justify-between"><span>Omelette Cochinita</span><span>$135</span></li>
-          <li class="flex justify-between"><span>Chilaquiles</span><span>$130</span></li>
-          <li class="flex justify-between"><span>Pan francés</span><span>$110</span></li>
-          <li class="flex justify-between"><span>Avotoast</span><span>$110</span></li>
-          <li class="flex justify-between"><span>Bowl de frutas</span><span>$100</span></li>
-        </ul>
-      </div>
+  <div class="pt-20">
+    <!-- Banner llamativo -->
+    <div class="attention-banner">
+      🌞 ¡Visítanos este fin de semana y prueba nuestro brunch especial! 🥐☕
     </div>
-  </section>
+
+    <!-- Encabezado con logo -->
+    <header class="bg-black text-white p-6 shadow-md flex flex-col items-center">
+      <img src="logo.jpeg" alt="Logo Cofi" class="w-48 mb-4 rounded-xl shadow">
+      <p class="text-lg font-light tracking-wider">Brunch & Café</p>
+    </header>
+
+    <!-- Botón de pedido -->
+    <section class="text-center mt-10">
+      <a href="https://wa.me/5215512345678" target="_blank" class="pedido-btn inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">Haz tu pedido</a>
+      <p class="text-sm mt-2 text-gray-500">(Te llevamos directo a WhatsApp)</p>
+    </section>
+
+    <!-- Galería de imágenes -->
+    <section id="galeria" class="p-8 max-w-6xl mx-auto mt-16">
+      <h2 class="text-4xl font-semibold mb-8 text-center">Galería</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <img src="Foto1.jpeg" alt="Café 1" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto2.jpeg" alt="Café 2" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto3.jpeg" alt="Café 3" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto4.jpeg" alt="Café 4" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto5.jpeg" alt="Café 5" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto6.jpeg" alt="Café 6" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto7.jpeg" alt="Café 7" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+        <img src="Foto8.jpeg" alt="Café 8" class="gallery-img rounded-xl shadow-md object-cover h-64 w-full">
+      </div>
+      <p class="text-sm text-center text-gray-500 mt-4">(Haz clic en una imagen para ampliarla)</p>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Menú estilizado -->
+    <section id="menu" class="p-8 max-w-6xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-8 text-center">Menú</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Cards de menú aquí -->
+        <!-- ... -->
+      </div>
+    </section>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-black text-white p-6 mt-12 text-center text-sm tracking-wide">
+    <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofibrunchcafe</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
     <p>&copy; 2025 Cofi. Síguenos en Instagram: @cofi.mx_</p>
   </footer>
 </body>
